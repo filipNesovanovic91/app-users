@@ -23,7 +23,20 @@ export class MainComponent implements OnInit {
     this.initStore();
   }
 
-  initStore() {
+  public onToggleActiveUser(user: User) {
+    const updatedUser = { ...user, isActive: !user.isActive };
+    this.userStore.updateUser(updatedUser);
+  }
+
+  public onOpenAddUserModal() {
+    this.isModalVisible = true;
+  }
+
+  public onCloseModal() {
+    this.isModalVisible = false;
+  }
+
+  private initStore() {
     this.users$ = this.userQuery.users$;
 
     this.isAddUserEnabled$ = this.users$.pipe(
@@ -33,18 +46,5 @@ export class MainComponent implements OnInit {
         return allUsersActive && userCountLessThanFive;
       })
     );
-  }
-
-  toggleActive(user: User) {
-    const updatedUser = { ...user, isActive: !user.isActive };
-    this.userStore.updateUser(updatedUser);
-  }
-
-  openAddUserModal() {
-    this.isModalVisible = true;
-  }
-
-  closeModal() {
-    this.isModalVisible = false;
   }
 }

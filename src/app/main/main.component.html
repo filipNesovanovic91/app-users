@@ -1,7 +1,7 @@
 <div class="button-container">
   <button
     class="btn toggle-btn"
-    (click)="openAddUserModal()"
+    (click)="onOpenAddUserModal()"
     [disabled]="!(isAddUserEnabled$ | async)"
   >
     Add User
@@ -10,10 +10,10 @@
 <ng-container *ngIf="users$ | async as users">
   <app-users-table
     [users]="users"
-    (toggleActive)="toggleActive($event)"
+    (toggleActive)="onToggleActiveUser($event)"
   ></app-users-table>
 </ng-container>
 <app-add-user-modal
   *ngIf="isModalVisible"
-  (close)="closeModal()"
+  (close)="onCloseModal()"
 ></app-add-user-modal>

@@ -6,8 +6,8 @@ describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [FooterComponent]
     })
     .compileComponents();
@@ -19,5 +19,13 @@ describe('FooterComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render the footer text with the current year', () => {
+    const element = fixture.nativeElement as HTMLElement;
+    const paragraph = element.querySelector('p');
+    const currentYear = new Date().getFullYear();
+    expect(paragraph).toBeTruthy(); 
+    expect(paragraph?.textContent).toContain(`© ${currentYear} Users Manager | All Rights Reserved`);
   });
 });

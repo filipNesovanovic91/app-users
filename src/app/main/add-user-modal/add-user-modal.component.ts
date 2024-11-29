@@ -26,16 +26,16 @@ export class AddUserModalComponent {
     private userQuery: UserQuery
   ) {
     this.addUserForm = this.fb.group({
-      name: ['', [Validators.required], [uniqueNameValidator(this.userQuery)]], // Async Validator added here
+      name: ['', [Validators.required], [uniqueNameValidator(this.userQuery)]], 
       isActive: [false],
     });
   }
 
-  closeModal() {
+  public closeModal() {
     this.close.emit();
   }
 
-  onSubmit() {
+  public onSubmit() {
     if (this.addUserForm.valid) {
       const newUser = this.addUserForm.value;
       this.userStore.addUser(newUser);

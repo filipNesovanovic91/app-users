@@ -13,7 +13,7 @@ export class UsersTableComponent {
   @Input() users: User[] = [];
   @Output() toggleActive: EventEmitter<User> = new EventEmitter();
 
-  onToggleActive(user: User) {
+  public onToggleActiveUser(user: User) {
     this.toggleActive.emit(user);
   }
 }
