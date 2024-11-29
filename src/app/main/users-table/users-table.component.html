@@ -1,0 +1,28 @@
+<table class="users-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>
+        <button class="btn toggle-btn" (click)="onToggleActive(user)">
+          {{ user.isActive ? "Deactivate" : "Activate" }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="3"></td>
+    </tr>
+  </tfoot>
+</table>

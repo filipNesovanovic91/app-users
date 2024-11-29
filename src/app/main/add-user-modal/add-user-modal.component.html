@@ -1,0 +1,42 @@
+<div class="modal-backdrop" (click)="closeModal()"></div>
+<div class="modal">
+  <div class="modal-header">
+    <h2>Add User</h2>
+    <button class="close-btn" (click)="closeModal()">×</button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Name:</label>
+        <input id="name" type="text" formControlName="name" />
+        <div
+          *ngIf="
+            addUserForm.get('name')?.invalid && addUserForm.get('name')?.dirty
+          "
+        >
+          <small
+            class="error"
+            *ngIf="addUserForm.get('name')?.hasError('required')"
+            >Name is required.</small
+          >
+          <small
+            class="error"
+            *ngIf="addUserForm.get('name')?.hasError('uniqueName')"
+            >Name is already taken.</small
+          >
+        </div>
+      </div>
+      <div>
+        <label for="isActive">Active:</label>
+        <input id="isActive" type="checkbox" formControlName="isActive" />
+      </div>
+      <br />
+      <button
+        type="submit"
+        [disabled]="addUserForm.invalid || addUserForm.pending"
+      >
+        Create
+      </button>
+    </form>
+  </div>
+</div>
