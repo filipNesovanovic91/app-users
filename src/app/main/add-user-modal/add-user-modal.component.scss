@@ -4,9 +4,9 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6); // Slightly darker backdrop
+  background: rgba(0, 0, 0, 0.6); 
   z-index: 1000;
-  backdrop-filter: blur(4px); // Adds a subtle blur effect for a modern look
+  backdrop-filter: blur(4px);
 }
 
 .modal {
@@ -14,13 +14,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #f9f9f9; // Light grey background for a modern feel
-  border-radius: 12px; // Slightly more rounded corners
+  background: #f9f9f9;
+  border-radius: 12px; 
   width: 420px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // Softer shadow
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
   z-index: 1001;
-  overflow: hidden; // Ensures no overflow
-  animation: fadeIn 0.3s ease-out; // Smooth fade-in animation
+  overflow: hidden;
+  animation: fadeIn 0.3s ease-out; 
 }
 
 @keyframes fadeIn {
@@ -39,8 +39,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: #2e9fcc; // A nice accent color
-  color: white; // White text for contrast
+  background: #2e9fcc;
+  color: white;
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -53,35 +53,35 @@
   color: white;
   cursor: pointer;
   transition: color 0.3s ease;
-}
 
-.close-btn:hover {
-  color: #f0f0f0; // Slightly lighter on hover
+  &:hover {
+    color: #f0f0f0;
+  }
 }
 
 .modal-body {
   padding: 1.5rem;
   font-family: Arial, sans-serif;
-}
 
-.modal-body label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #333;
-}
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+  }
 
-.modal-body input[type="text"] {
-  width: calc(100% - 1rem);
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-}
+  input[type="text"] {
+    width: calc(100% - 1rem);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
 
-.modal-body input[type="checkbox"] {
-  margin-left: 0.5rem;
+  input[type="checkbox"] {
+    margin-left: 0.5rem;
+  }
 }
 
 button[type="submit"] {
@@ -96,13 +96,19 @@ button[type="submit"] {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
+
+  &:hover {
+    background: #1c8bb3;
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
 }
 
-button[type="submit"]:hover {
-  background: #1c8bb3;
-}
-
-button[type="submit"]:disabled {
-  background: #ccc;
-  cursor: not-allowed;
+.error {
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
 }

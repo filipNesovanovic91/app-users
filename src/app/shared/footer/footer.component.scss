@@ -1,36 +1,38 @@
-$footer-bg-color: #2c3e50;  
-$footer-text-color: #fff;    
-$footer-link-hover-color: #3498db;  
+$footer-bg-color: #2c3e50;
+$footer-text-color: #fff;
+$footer-link-hover-color: #3498db;
 
 .footer {
   background-color: $footer-bg-color;
   color: $footer-text-color;
-  padding: 20px 0;  
-  font-size: 1rem;  
-  
+  padding: 20px 0;
+  font-size: 1rem;
+
   .footer-content {
     display: flex;
-    justify-content: center;  
-    align-items: center;      
-    text-align: center;       
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 
     .footer-center {
       p {
-        margin: 0;           
-        font-size: 0.9rem;   
-        font-weight: 300;   
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: 300;
       }
     }
   }
 
   @media (max-width: 768px) {
     .footer-content {
-      flex-direction: column;  
-      padding: 15px 0;         
+      flex-direction: column;
+      padding: 15px 0;
     }
 
-    .footer-center p {
-      font-size: 0.8rem; 
+    .footer-center {
+      p {
+        font-size: 0.8rem;
+      }
     }
   }
 }
